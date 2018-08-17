@@ -1,8 +1,7 @@
-## Welcome to GitHub Pages
+## Welcome to My Github Page
 
-You can use the [editor on GitHub](https://github.com/ningresearch/jianing.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Hi, my name is Jia Ning, and I am currently working as a postdoc in Department of Computer Science, Durham University. My research interest includes Computer Vision, Deep Learning and Image Processing.
+Awarded a PhD degree from University of Warwick, I was doing research on biometrics and image/video related pattern recognition, concretely human identification by their gait patterns. My current project, funded by P&G, concerns the counterfeit analysis on the commodities under their names. 
 
 ### Markdown
 
