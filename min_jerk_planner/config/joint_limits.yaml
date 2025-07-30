@@ -1,0 +1,92 @@
+# Joint limits configuration for high-precision min-jerk trajectory planning
+# Adjust these values according to your robot's specifications
+
+# Example configuration for a 6-DOF robotic arm
+# Values are conservative to ensure high precision and safety
+
+joint1:
+  min_position: -2.8973  # rad
+  max_position: 2.8973   # rad
+  max_velocity: 2.1750   # rad/s
+  max_acceleration: 15.0 # rad/s²
+  max_jerk: 50.0         # rad/s³
+  has_velocity_limits: true
+  has_acceleration_limits: true
+  has_jerk_limits: true
+
+joint2:
+  min_position: -1.7628  # rad
+  max_position: 1.7628   # rad
+  max_velocity: 2.1750   # rad/s
+  max_acceleration: 7.5  # rad/s²
+  max_jerk: 25.0         # rad/s³
+  has_velocity_limits: true
+  has_acceleration_limits: true
+  has_jerk_limits: true
+
+joint3:
+  min_position: -2.8973  # rad
+  max_position: 2.8973   # rad
+  max_velocity: 2.1750   # rad/s
+  max_acceleration: 10.0 # rad/s²
+  max_jerk: 30.0         # rad/s³
+  has_velocity_limits: true
+  has_acceleration_limits: true
+  has_jerk_limits: true
+
+joint4:
+  min_position: -3.0718  # rad
+  max_position: -0.0698  # rad
+  max_velocity: 2.1750   # rad/s
+  max_acceleration: 12.5 # rad/s²
+  max_jerk: 40.0         # rad/s³
+  has_velocity_limits: true
+  has_acceleration_limits: true
+  has_jerk_limits: true
+
+joint5:
+  min_position: -2.8973  # rad
+  max_position: 2.8973   # rad
+  max_velocity: 2.6100   # rad/s
+  max_acceleration: 15.0 # rad/s²
+  max_jerk: 50.0         # rad/s³
+  has_velocity_limits: true
+  has_acceleration_limits: true
+  has_jerk_limits: true
+
+joint6:
+  min_position: -0.0175  # rad
+  max_position: 3.7525   # rad
+  max_velocity: 2.6100   # rad/s
+  max_acceleration: 20.0 # rad/s²
+  max_jerk: 60.0         # rad/s³
+  has_velocity_limits: true
+  has_acceleration_limits: true
+  has_jerk_limits: true
+
+# High-precision control parameters
+control_parameters:
+  # Control frequency for trajectory execution (Hz)
+  control_frequency: 1000.0
+  
+  # Position tolerance for precision applications (rad)
+  position_tolerance: 0.001
+  
+  # Velocity tolerance (rad/s)
+  velocity_tolerance: 0.01
+  
+  # Trajectory interpolation method
+  interpolation_method: "quintic_spline"
+  
+  # Enable jerk limiting
+  enable_jerk_limiting: true
+  
+  # Safety scaling factors (0.0 - 1.0)
+  default_velocity_scaling: 0.5
+  default_acceleration_scaling: 0.5
+  
+  # Minimum trajectory duration (s)
+  min_trajectory_duration: 0.1
+  
+  # Maximum trajectory duration (s)  
+  max_trajectory_duration: 30.0
