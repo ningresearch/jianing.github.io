@@ -1,0 +1,57 @@
+# Service for planning Cartesian paths with collision avoidance
+# Request
+
+# Planning group name
+string group_name
+
+# Link to move (typically end-effector)
+string link_name
+
+# Cartesian waypoints
+geometry_msgs/Pose[] waypoints
+
+# Cartesian path parameters
+float64 max_step 0.01  # Maximum step size between waypoints (m)
+float64 jump_threshold 0.0  # Jump threshold for avoiding large joint changes
+bool avoid_collisions true
+
+# Planning scene updates (optional)
+moveit_msgs/PlanningScene planning_scene_diff
+
+# Speed parameters
+float64 max_velocity_scaling_factor 0.5
+float64 max_acceleration_scaling_factor 0.5
+
+# Min-jerk parameters
+bool apply_min_jerk_smoothing true
+float64 trajectory_duration 0.0  # Auto-calculate if 0
+bool enable_jerk_limiting true
+
+# Path constraints (optional)
+moveit_msgs/Constraints path_constraints
+
+---
+# Response
+
+# Success flag
+bool success
+
+# Planned trajectory
+trajectory_msgs/JointTrajectory trajectory
+
+# Planning results
+moveit_msgs/MoveItErrorCodes error_code
+string error_message
+
+# Cartesian path metrics
+float64 fraction_achieved  # Fraction of path successfully planned (0.0 to 1.0)
+int32 num_waypoints_achieved
+float64 path_length
+
+# Collision information
+bool path_is_collision_free
+string[] collision_details
+
+# Trajectory quality
+float64 trajectory_smoothness_score
+bool meets_precision_requirements

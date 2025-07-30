@@ -1,0 +1,60 @@
+# Service for planning min-jerk trajectories with collision avoidance
+# Request
+
+# Planning group name
+string group_name
+
+# Start state (optional - uses current state if empty)
+moveit_msgs/RobotState start_state
+
+# Goal specification (one of these must be provided)
+# Option 1: Joint space goal
+sensor_msgs/JointState joint_goal
+
+# Option 2: Pose goal
+geometry_msgs/PoseStamped pose_goal
+
+# Option 3: Multiple waypoints
+geometry_msgs/PoseStamped[] waypoints
+
+# Planning parameters
+float64 max_velocity_scaling_factor 0.5
+float64 max_acceleration_scaling_factor 0.5
+float64 planning_time 5.0
+int32 planning_attempts 5
+
+# Min-jerk specific parameters
+float64 trajectory_duration 0.0  # Auto-calculate if 0
+bool enable_jerk_limiting true
+float64 max_jerk_scaling_factor 0.5
+
+# Collision avoidance parameters
+bool enable_collision_checking true
+float64 collision_check_resolution 0.01
+string[] allowed_collision_matrix
+
+# Path planning parameters
+string planner_id "RRTConnect"
+bool enable_path_constraints false
+moveit_msgs/Constraints path_constraints
+
+---
+# Response
+
+# Success flag
+bool success
+
+# Planned trajectory
+trajectory_msgs/JointTrajectory trajectory
+
+# Planning result details
+moveit_msgs/MoveItErrorCodes error_code
+float64 planning_time_taken
+string error_message
+
+# Trajectory analysis
+float64 trajectory_duration
+float64[] max_joint_velocities
+float64[] max_joint_accelerations  
+float64[] max_joint_jerks
+bool trajectory_is_collision_free

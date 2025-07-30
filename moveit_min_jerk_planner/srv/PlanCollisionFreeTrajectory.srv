@@ -1,0 +1,57 @@
+# Service for planning collision-free trajectories with full MoveIt2 integration
+# Request
+
+# Planning group name
+string group_name
+
+# Start and goal poses
+geometry_msgs/PoseStamped start_pose
+geometry_msgs/PoseStamped goal_pose
+
+# Planning scene updates (optional)
+moveit_msgs/PlanningScene planning_scene_diff
+
+# Collision objects to add/remove
+moveit_msgs/CollisionObject[] collision_objects
+
+# Planning parameters
+string planner_id "RRTConnect"
+float64 planning_time 5.0
+int32 planning_attempts 5
+float64 max_velocity_scaling_factor 0.5
+float64 max_acceleration_scaling_factor 0.5
+
+# Workspace bounds (optional)
+moveit_msgs/WorkspaceParameters workspace_parameters
+
+# Path constraints (optional)
+moveit_msgs/Constraints path_constraints
+
+# Min-jerk post-processing
+bool apply_min_jerk_smoothing true
+float64 min_jerk_trajectory_duration 0.0
+bool enable_jerk_limiting true
+
+---
+# Response
+
+# Success flag
+bool success
+
+# Planned trajectory
+trajectory_msgs/JointTrajectory trajectory
+
+# Planning details
+moveit_msgs/MoveItErrorCodes error_code
+float64 planning_time_taken
+string error_message
+
+# Collision checking results
+bool trajectory_is_collision_free
+int32 num_collision_free_segments
+string[] collision_details
+
+# Trajectory quality metrics
+float64 trajectory_length
+float64 trajectory_smoothness_score
+float64 trajectory_clearance_score

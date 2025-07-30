@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>moveit_min_jerk_planner</name>
+  <version>1.0.0</version>
+  <description>High-precision min-jerk trajectory planner with MoveIt2 collision avoidance and path planning</description>
+  <maintainer email="user@example.com">User</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+
+  <!-- Core ROS 2 dependencies -->
+  <depend>rclcpp</depend>
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>trajectory_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>control_msgs</depend>
+  <depend>action_msgs</depend>
+
+  <!-- MoveIt2 dependencies -->
+  <depend>moveit_core</depend>
+  <depend>moveit_ros_planning</depend>
+  <depend>moveit_ros_planning_interface</depend>
+  <depend>moveit_ros_move_group</depend>
+  <depend>moveit_kinematics</depend>
+  <depend>moveit_planners_ompl</depend>
+  <depend>moveit_simple_controller_manager</depend>
+  <depend>moveit_configs_utils</depend>
+  <depend>moveit_visual_tools</depend>
+
+  <!-- Additional planning dependencies -->
+  <depend>ompl</depend>
+  <depend>geometric_shapes</depend>
+  <depend>shape_msgs</depend>
+  <depend>moveit_msgs</depend>
+  <depend>planning_scene_monitor</depend>
+
+  <!-- Python dependencies -->
+  <depend>python3-numpy</depend>
+  <depend>python3-yaml</depend>
+
+  <!-- Eigen for mathematical operations -->
+  <depend>eigen3_cmake_module</depend>
+  <depend>Eigen3</depend>
+
+  <!-- Testing dependencies -->
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+  <test_depend>ament_cmake_gtest</test_depend>
+  <test_depend>launch_testing_ament_cmake</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
